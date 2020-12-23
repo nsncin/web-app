@@ -42,6 +42,11 @@ class Wusers
      */
     private $email;
 
+    /**
+    +      * @ORM\Column(type="text")
+    +      */
+    private $password;
+
     public function getUserId(): ?int
     {
         return $this->userId;
@@ -82,6 +87,7 @@ class Wusers
 
         return $this;
     }
+
 
 
 }

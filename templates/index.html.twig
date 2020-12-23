@@ -1,12 +1,96 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+{% extends 'base.html.twig' %}
+
+
+
+ 
+        {% block body %}
+
+
+
+            <br />
+            {# {% for users in usersAll %}
+              
+                  
+                     <div class='number'>{{ users.userId }}</div>
+
+              
+                  
+             {% endfor %} #}
+             <br />
+
+             <table class="table table-bordered table-striped table-hover newTable">
+    <tr>
+      
+        <th >{{'EmployeeUserId'}}</th >
+        <th >{{'Employee First Name'}}</th >
+        <th >{{'Employee Last Name'}}</th >
+        <th >{{'Department ID'}}</th >
+        
+
+        <th >{{'Dept DepartmentName'}}</th >
+        {# <th >{{'Dept Dept ManagerId'}}</th > #}
+       
+    </tr>
+     {% for users in usersAll %}
+    <tr class="newTabletr">
+        <td >{{users.EmployeeUserId}}</td>
+        <td >{{users.EmployeeFirstName}}</td>
+        <td >{{users.EmployeeLastName}}</td>
+        <td >{{users.DepId}}</td>
+      
+        <td >{{users.DepartmentName}}</td>
+        {# <td >{{users.DeptManagerId}}</td> #}
+        
+        
+           
+    </tr>
+
+    {# <div id='animationSnow' width='600' height='600'></div> #}
+
+
+
+    {% endfor %}
+        </table>
+
+
+
+             
+             <div class="clearfix"></div>
+            
+            
+            
+            
+            
+
+           
+        {% endblock %}
+        {% block javascripts %}
+       
+      
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js" integrity="sha512-0bCDSnaX8FOD9Mq8WbHcDwshXwCB5V4EP+UBu87WQgga2b7lAsuEbaSmIZjH/XEmNhJuhrPbFHemre5HZwrk9w==" crossorigin="anonymous"></script>">
+   
+    
+
+
+  
+   
+    <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/player.js') }}"></script>
+   
+        <script type="text/javascript">
+
+      
+
+        $( document ).ready(function() {
+      
+
+
+        });
+
+
+        </script>
+
+        {% endblock %}
+ 
